@@ -15,11 +15,8 @@ public class HW2WithPageObjects {
     @Test
     void FillingFieldsTests() {
         formPage.openSearchPage();
-        Selenide.sleep(3000);
         formPage.fillForm();
-        Selenide.sleep(3000);
         popupWithFilledData.checkData();
-        Selenide.sleep(3000);
     }
 
 }

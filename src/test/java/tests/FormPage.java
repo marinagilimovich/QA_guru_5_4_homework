@@ -9,18 +9,20 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FormPage {
-    String firstName = "Migde",
-            lastName = "Maisel",
-            userEmail = "midgeme123@gmail.com",
-            userNumber = "0123456789",
-            gender = "Female",
+    FakerData fakerData = FakerData.sharedInstance();
+
+    String firstName = fakerData.firstName,
+            lastName = fakerData.lastName,
+            emailAddress = fakerData.emailAddress,
+            userNumber = fakerData.phoneNumber,
+            gender = fakerData.gender,
             dateOfBirth = "03",
             monthOfBirth = "May",
             yearOfBirth = "1964",
             subject = "Chemistry",
             hobby = "Music",
             picture = "1.png",
-            currentAddress = "10 Main str.",
+            currentAddress = fakerData.currentAddress,
             state = "Haryana",
             city = "Karnal";
 
@@ -32,7 +34,7 @@ public class FormPage {
     void fillForm() {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
-        $("#userEmail").setValue(userEmail);
+        $("#userEmail").setValue(emailAddress);
         $(byText(gender)).click();
         $("#userNumber").setValue(userNumber);
         setBirthDate();
