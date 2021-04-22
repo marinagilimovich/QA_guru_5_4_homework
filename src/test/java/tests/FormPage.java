@@ -22,7 +22,7 @@ public class FormPage {
             subject = "Chemistry",
             hobby = "Music",
             picture = "1.png",
-            currentAddress = fakerData.currentAddress,
+            currentAddress = faker.address().fullAddress(),
             state = "Haryana",
             city = "Karnal";
 
